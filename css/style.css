@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    text-transform: capitalize;
+    list-style: none;
+    outline: none;
+}
+
+.h-div{
+    padding: 0 9%;
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* heder */
+
+.header{
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    top: 0;
+    left: 0;
+}
+.header .h-div .logo h3{
+    font-size: 30px;
+    color: green;
+}
+.header .h-div .navbar a{
+    margin-right: 30px;
+    font-size: 30px;
+}
+.header .h-div input{
+display: none;
+}
+.header .h-div label{
+    font-size: 30px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+.header{
+    background: rgb(236, 220, 220);
+}
+/* responsive */
+
+@media (max-width: 768px){
+
+    .header .h-div label{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin: 10px 20px;
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    .header .navbar a{
+        display: block;
+        margin: 20px 0;
+        padding: 15px;
+        background: #fff;
+        border: 1px solid rgba(0,0,0,.1);
+        border-left: 3px solid red;
+    }
+    .header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    .header input:checked ~ label::before{
+        content: '\f00d';
+    }
+}
+
